@@ -41,3 +41,14 @@ class TestApp(unittest.TestCase):
         print(hasiltestingsemua)
         ambilsatuhasiltesting = hasiltestingsemua[1]
         self.assertLessEqual(ambilsatuhasiltesting, 2)
+
+    def test_02_ilham_1184057(self):
+        from Chapter01.ilhamdwi_1184057 import processing, training, testing
+        datapath = 'Chapter01/dataset/german_credit_data.csv'
+        d_train_att, d_train_pass, d_test_att, d_test_pass, d_att, d_pass = processing(datapath)
+        t = training(d_train_att, d_train_pass)
+        hasiltestingsemua = testing(t, d_test_att)
+        print('\n Hasil testing : ')
+        print(hasiltestingsemua)
+        ambilsatuhasiltesting = hasiltestingsemua[1]
+        self.assertLessEqual(ambilsatuhasiltesting, 2)
