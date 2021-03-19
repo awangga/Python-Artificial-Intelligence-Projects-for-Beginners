@@ -138,48 +138,24 @@ class TestApp(unittest.TestCase):
         print("result : ")
         print(result)
         self.assertLessEqual(result[0], 1)
-        
 
-    def test_02_FarisMuhammadIhsan_1184099(self):
-        from Chapter01.FarisIhsan1184099 import preparation, train, test
-        
-        #path ke dataset
-        dataset = 'Chapter01/dataset/stroke.csv'
-        
-        # testing function preparation
-        d_train_att, d_train_stroke, d_test_att, d_test_stroke, d_att, d_stroke = preparation(dataset)
-        
-        #testing function training
-        t = train(d_train_att, d_train_stroke)
-        
-        #testing function testing
-        hasiltestingsemua = test(t, d_test_att)
-        
-        #hasil
-        print('\n hasil test Faris :')
-        print(hasiltestingsemua)
-        ambilsatuhasiltesting = hasiltestingsemua[0]
-        self.assertLessEqual(ambilsatuhasiltesting, 1)
-
-    
-    def test_02_mwahyu_1184059(self):
-        from Chapter01.mwahyu1184059 import preparation,training,testing
-         #data
+    def test_02_Innal_1184036(self):
+        from Chapter01.innal1184036 import preparation,training,testing
+        #data
         data = preparation()
         #train data
         train = data.pop(0)
-        dta_train_att = train.pop(0)
-        dta_train_outcome = train.pop(0)
+        data_frame_source_train_att = train.pop(0)
+        data_frame_source_train_class = train.pop(0)
         #test data
         test = data.pop(0)
-        dta_test_att = test.pop(0)
-        dta_test_outcome = test.pop(0)
+        data_frame_source_test_att = test.pop(0)
+        data_frame_source_test_class = test.pop(0)
         #training
-        t = training(dta_train_att, dta_train_outcome)
+        t = training(data_frame_source_train_att, data_frame_source_train_class)
         #predict
-        result = testing(t,dta_test_att)
-        print("result : ")
+        result = testing(t,data_frame_source_test_att)
+        print("Hasil : ")
         print(result)
         self.assertLessEqual(result[0], 1)
-
 
